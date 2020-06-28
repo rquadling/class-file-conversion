@@ -45,7 +45,7 @@ class Conversion
     /** @var ComposerFileToClass */
     private static $composerFileToClass;
 
-    private static function init()
+    private static function init(): void
     {
         if (empty(static::$autoLoader)) {
             static::$autoLoader = require Environment::getRoot().'/vendor/autoload.php';
@@ -62,10 +62,8 @@ class Conversion
 
     /**
      * Return the class name based upon Composer's current information.
-     *
-     * @return ClassName|null
      */
-    public static function getClassNameFromFilename(string $filename)
+    public static function getClassNameFromFilename(string $filename): ?ClassName
     {
         static::init();
 
@@ -79,9 +77,9 @@ class Conversion
     }
 
     /**
-     * @return FilePath|null
+     * Return the filename based upon Composer's current information.
      */
-    public static function getFilenameFromClassName(string $classname)
+    public static function getFilenameFromClassName(string $classname): ?FilePath
     {
         static::init();
 

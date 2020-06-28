@@ -36,7 +36,7 @@ class ConversionTest extends TestCase
     /**
      * @dataProvider provideFilenamesAndClasses
      */
-    public function testClassNameCanBeRetrievedForValidFilename(string $file, string $expectation = null)
+    public function testClassNameCanBeRetrievedForValidFilename(string $file, string $expectation = null): void
     {
         $this->assertEquals($expectation, Conversion::getClassNameFromFilename($file));
     }
@@ -44,12 +44,15 @@ class ConversionTest extends TestCase
     /**
      * @dataProvider provideClassnamesAndFilenames
      */
-    public function testGetFilenameFromClass(string $classname, string $expectation = null)
+    public function testGetFilenameFromClass(string $classname, string $expectation = null): void
     {
         $this->assertEquals($expectation, Conversion::getFilenameFromClassName($classname));
     }
 
-    public function provideFilenamesAndClasses()
+    /**
+     * @return array<string, array<int, string|null>>
+     */
+    public function provideFilenamesAndClasses(): array
     {
         return [
             // Valid filenames.
@@ -65,7 +68,10 @@ class ConversionTest extends TestCase
         ];
     }
 
-    public function provideClassnamesAndFilenames()
+    /**
+     * @return array<string, array<int, string|null>>
+     */
+    public function provideClassnamesAndFilenames(): array
     {
         return [
             // Valid namespaces.
