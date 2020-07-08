@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "phpactor/class-to-file": "^0.3.3",
+        "phpactor/class-to-file": "^0.3.4",
         "rquadling/environment": "^2.0"
     },
     "require-dev": {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * RQuadling/ClassFileConversion
  *
@@ -36,27 +38,14 @@ use Throwable;
 
 class Conversion
 {
-    /** @var ClassLoader */
-    private static $autoLoader;
+    private static ClassLoader $autoLoader;
+    private static ComposerClassToFile $composerClassToFile;
+    private static ComposerFileToClass $composerFileToClass;
 
-    /** @var ComposerClassToFile */
-    private static $composerClassToFile;
-
-    /** @var ComposerFileToClass */
-    private static $composerFileToClass;
-
-    private static function init(): void
+    private static function initAutoLoader(): void
     {
         if (empty(static::$autoLoader)) {
             static::$autoLoader = require Environment::getRoot().'/vendor/autoload.php';
-        }
-
-        if (empty(static::$composerFileToClass)) {
-            static::$composerFileToClass = new ComposerFileToClass(static::$autoLoader);
-        }
-
-        if (empty(static::$composerClassToFile)) {
-            static::$composerClassToFile = new ComposerClassToFile(static::$autoLoader);
         }
     }
 
@@ -65,7 +54,10 @@ class Conversion
      */
     public static function getClassNameFromFilename(string $filename): ?ClassName
     {
-        static::init();
+        if (empty(static::$composerFileToClass)) {
+            static::initAutoLoader();
+            static::$composerFileToClass = new ComposerFileToClass(static::$autoLoader);
+        }
 
         try {
             return static::$composerFileToClass
@@ -81,7 +73,10 @@ class Conversion
      */
     public static function getFilenameFromClassName(string $classname): ?FilePath
     {
-        static::init();
+        if (empty(static::$composerClassToFile)) {
+            static::initAutoLoader();
+            static::$composerClassToFile = new ComposerClassToFile(static::$autoLoader);
+        }
 
         try {
             return static::$composerClassToFile
