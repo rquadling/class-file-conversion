@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.4",
         "phpactor/class-to-file": "^0.3.4",
-        "rquadling/environment": "^2.0"
+        "rquadling/environment": "^2.0.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",

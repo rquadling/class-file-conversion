@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07068e50f942dd837c3b741e7e49933e",
+    "content-hash": "1ec7dff9dc113d318f7b39bda9b29aa6",
     "packages": [
         {
             "name": "josegonzalez/dotenv",
@@ -292,16 +292,16 @@
         },
         {
             "name": "rquadling/environment",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rquadling/environment.git",
-                "reference": "211ef22f5c4266fb4690dc14403d4ed7229ef996"
+                "reference": "f326d0f6c432fc3d8b8217fd860a4876347593b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rquadling/environment/zipball/211ef22f5c4266fb4690dc14403d4ed7229ef996",
-                "reference": "211ef22f5c4266fb4690dc14403d4ed7229ef996",
+                "url": "https://api.github.com/repos/rquadling/environment/zipball/f326d0f6c432fc3d8b8217fd860a4876347593b0",
+                "reference": "f326d0f6c432fc3d8b8217fd860a4876347593b0",
                 "shasum": ""
             },
             "require": {
@@ -336,9 +336,9 @@
             "description": "Autoload the .env file from the project root",
             "support": {
                 "issues": "https://github.com/rquadling/environment/issues",
-                "source": "https://github.com/rquadling/environment/tree/v2.0.0"
+                "source": "https://github.com/rquadling/environment/tree/v2.0.1"
             },
-            "time": "2020-06-22T19:12:00+00:00"
+            "time": "2020-07-09T00:07:09+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
